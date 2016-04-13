@@ -3,6 +3,6 @@ Repo for CS325 Project 1
 
 Created by:
 
-Sarah Newport
-Lisa Scheibner
+Sarah Newport,
+Lisa Scheibner,
 Kayla Vondy

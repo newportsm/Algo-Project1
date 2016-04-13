@@ -3,10 +3,11 @@ import csv
 import sys
 
 #ENUMERATION ALGORITHM
+#refereneced http://courses.cs.washington.edu/courses/cse143/06wi/handouts/12.html
 # O(n^3)
 def enumeration(array):
     
-    Sum = 0
+    maxSum = 0
     maxStart = 0
     maxStop = 0
     
@@ -20,39 +21,36 @@ def enumeration(array):
             for k in range(i, j + 1):
                 current += array[k]
                 
-                if current > Sum:
-                    Sum = current
+                if current > maxSum:
+                    maxSum = current
                     maxStart = currentStart
                     maxStop = currentStop
     
-    return Sum
+    return maxSum
 
 #BETTER ENUMERATION ALGORITHM
+# using two loops
 # O(n^2)
 def betterEnumeration(array):
     
     maxSum = 0
-    maxStart = 0
-    maxStop = 1
-    k = 0
     
+    #first loop
     for i in range(0, len(array)):
-        sumNum = 0
-        currentStart = i
+        current = 0
         
+        #second loop
         for j in range(i, len(array)):
-            sumNum = sumNum + array[j]
-            currentStop = j
-            
-            if sumNum > maxSum:
-                maxSum = sumNum
-                maxStart = currentStart
-                maxStop = currentStop
-    
+            current += array[j]
+            #comparison
+            if current > maxSum:
+                maxSum = current
+  
     return maxSum
 
 #DIVIDE AND CONQUER
 #referenced https://copingwithcomputers.com/2014/05/17/maximum-subarray-problem/
+# "We can then think about the complexity. Like most divide and conquer algorithms, the complexity is O(nlog(n)). We can easily see this by the two functions. max_subarray keeps dividing the problem into two parts, contributing the log(n) portion, while the max_crossover, goes through the entire list, in linear time. I think this function is a great example to use for a demonstration of what an O(nlog(n)) function looks like."
 # O(nlogn)
 def divideCrossover(array, start, middle, end):
     
@@ -114,28 +112,17 @@ def divideAndConquer(array, start = 0, end=None):
 # O(n) complexity
 def linear(array):
     
-    currentStart = 0
-    currentStop = 0
-    currentSum = 0
-    maxStart = 0
-    maxStop = 0
-    Sum = 0
+    maxSum = 0
+    currentMax = 0
     
-    for x in range(0, len(array)):
-        if (array[x] > currentSum + array[x]):
-            currentSum = array[x]
-            currentStart = x
-            currentStop = x
-        else:
-            currentSum = currentSum + array[x]
-            currentStop = x
-            
-        if(currentSum > Sum):
-            Sum = currentSum
-            maxStart = currentStart
-            maxStop = currentStop
-            
-    return Sum
+    for i in range(len(array)):
+        currentMax += array[i]
+        if currentMax < 0:
+            currentMax = 0
+        if maxSum < currentMax:
+            maxSum = currentMax
+    
+    return maxSum
 
 #MAIN FUNCTION
 def main():

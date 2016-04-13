@@ -50,6 +50,7 @@ def betterEnumeration(array):
     return maxSum
 
 #DIVIDE AND CONQUER
+#referenced https://copingwithcomputers.com/2014/05/17/maximum-subarray-problem/
 def divideCrossover(array, start, middle, end):
     
     currentLeftSum = 0

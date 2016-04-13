@@ -3,6 +3,7 @@ import csv
 import sys
 
 #ENUMERATION ALGORITHM
+# O(n^3)
 def enumeration(array):
     
     Sum = 0
@@ -27,6 +28,7 @@ def enumeration(array):
     return Sum
 
 #BETTER ENUMERATION ALGORITHM
+# O(n^2)
 def betterEnumeration(array):
     
     maxSum = 0
@@ -51,6 +53,7 @@ def betterEnumeration(array):
 
 #DIVIDE AND CONQUER
 #referenced https://copingwithcomputers.com/2014/05/17/maximum-subarray-problem/
+# O(nlogn)
 def divideCrossover(array, start, middle, end):
     
     currentLeftSum = 0
@@ -108,6 +111,7 @@ def divideAndConquer(array, start = 0, end=None):
             return resultArray
         
 #LINEAR ALGORITHM
+# O(n) complexity
 def linear(array):
     
     currentStart = 0

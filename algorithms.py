@@ -1,6 +1,8 @@
 import os
 import csv
 import sys
+import random
+import time
 
 #ENUMERATION ALGORITHM
 #refereneced http://courses.cs.washington.edu/courses/cse143/06wi/handouts/12.html
@@ -198,6 +200,71 @@ def main():
                     # write linear result to file
                     resultTemp.write("\nLinear Sum: " + str(result) + "\n\n")
 
+    #Function takes an array and the size of the array and fills it
+    #with random numbers from -100 to 100
+
+    def fillArray( myArray, arraySize):
+        for i in range(0 , arraySize):
+            myArray.append(random.randrange(-100, 100))
+
+    #Creating ten arrays of size 100
+            
+    array0, array1, array2, array3, array4, array5, array6, array7,\
+            array8, array9 =([], [], [], [], [], [], [], [], [], [])
+
+    fillArray(array0, 100000)
+    fillArray(array1, 100000)
+    fillArray(array2, 100000)
+    fillArray(array3, 100000)
+    fillArray(array4, 100000)
+    fillArray(array5, 100000)
+    fillArray(array6, 100000)
+    fillArray(array7, 100000)
+    fillArray(array8, 100000)
+    fillArray(array9, 100000)
+
+    start_time = time.time()
+    result = linear(array0)
+    print("--- %s seconds ---" % (time.time() - start_time))
+
+    start_time = time.time()
+    result = linear(array1)
+    print("--- %s seconds ---" % (time.time() - start_time))
+    
+    start_time = time.time()
+    result = linear(array2)
+    print("--- %s seconds ---" % (time.time() - start_time))
+    
+    start_time = time.time()
+    result = linear(array3)
+    print("--- %s seconds ---" % (time.time() - start_time))
+
+    start_time = time.time()
+    result = linear(array4)
+    print("--- %s seconds ---" % (time.time() - start_time))
+
+    start_time = time.time()
+    result = linear(array5)
+    print("--- %s seconds ---" % (time.time() - start_time))
+
+    start_time = time.time()
+    result = linear(array6)
+    print("--- %s seconds ---" % (time.time() - start_time))
+    
+    start_time = time.time()
+    result = linear(array7)
+    print("--- %s seconds ---" % (time.time() - start_time))
+    
+    start_time = time.time()
+    result = linear(array8)
+    print("--- %s seconds ---" % (time.time() - start_time))
+
+    start_time = time.time()
+    result = linear(array9)
+    print("--- %s seconds ---" % (time.time() - start_time))
+
+
+    
 # call to main function                    
 main()
 

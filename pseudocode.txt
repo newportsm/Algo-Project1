@@ -1,0 +1,113 @@
+Pseudocode
+
+
+ENUMERATION ALGORITHM
+def enumeration ()
+
+    maximum sum = 0
+    start = 0
+    stop = 0
+    
+    for loop through array(start, end of array)
+        current start = x
+        
+        for loop through array(x, end of array)
+            current sum = 0
+            current stop = x
+            
+            for loop through array (x, x)
+                current sum + array[x]
+                if current sum > maximum sum
+                    maximum sum = current sum
+                    start = current start
+                    stop = current stop
+                    
+    return maximum sum
+  
+  
+BETTER ENUMERATION ALGORITHM
+def betterenumeration ()
+
+    maximum sum = 0
+    
+    for loop through array(start, end of array)
+        current sum = 0
+        
+        for loop through range(x, end of array)
+            current sum + array[x]
+            if current sum >  maximum sum
+                maximum sum = current sum
+                
+    return maximum sum
+    
+    
+    
+DIVIDE AND CONQUER ALGORITHM
+referenced https://copingwithcomputers.com/2014/05/17/maximum-subarray-problem/
+
+def divideandconquer()
+
+    if length of array = 0
+        return 0
+        
+    if length of array = 1
+        return start int
+        
+    else
+        middle = (start + end) / 2
+        
+        leftlow, lefthigh, leftsum = recursive call
+        rightlow, righthigh, rightsum = recursive call
+        low, high, sum = crossover func call
+        
+        if leftsum > rightsum and leftsum > sum
+            then return leftlow, lefthigh, leftsum
+            
+        elif right sum > leftsum and rightsum > sum
+            then return leftlow, lefthigh, leftsum
+            
+         else:
+            return low, high, sum
+            
+def crossover()
+
+    current leftsum = 0
+    left sum =
+    current rightsum = 0
+    right sum =
+    leftIndex = middle of array
+    rightIndez = middle of array + 1
+    
+    for loop through range(middle, start, -1)
+        current leftsum + arrayIndex
+        if current leftsum > leftsum
+            leftsum = current leftsum
+            leftIndex = x
+            
+    for loop through range(middle+1, end)
+        current rightsum + arrayIndex
+        if current rightsum > rightsum
+            rightsum = current rightsum
+            rightIndez = x
+    
+    return(leftIndex, rightIndex, leftsum + rightsum)
+    
+    
+    
+LINEAR ALGORITHM
+def linear()
+
+    maximum sum = 0
+    current sum = 0
+    
+    for loop through range(array)
+        current sum + arrayIndex
+        if current sum < 0
+            current sum = 0
+        if maximum sum < current sum
+            maximum sum = current sum
+    
+    return maximum sum
+            
+        
+    

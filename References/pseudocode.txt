@@ -2,17 +2,16 @@ Pseudocode
 
 
 ENUMERATION ALGORITHM
-def enumeration ()
 
-    maximum sum = 0
-    start = 0
-    stop = 0
+    maximum sum
+    start
+    stop
     
     for loop through array(start, end of array)
         current start = x
         
         for loop through array(x, end of array)
-            current sum = 0
+            current sum
             current stop = x
             
             for loop through array (x, x)
@@ -26,12 +25,11 @@ def enumeration ()
   
   
 BETTER ENUMERATION ALGORITHM
-def betterenumeration ()
 
-    maximum sum = 0
+    maximum sum 
     
     for loop through array(start, end of array)
-        current sum = 0
+        current sum
         
         for loop through range(x, end of array)
             current sum + array[x]
@@ -71,10 +69,10 @@ def divideandconquer()
             
 def crossover()
 
-    current leftsum = 0
-    left sum =
-    current rightsum = 0
-    right sum =
+    current leftsum
+    left sum
+    current rightsum 
+    right sum
     leftIndex = middle of array
     rightIndez = middle of array + 1
     
@@ -97,8 +95,8 @@ def crossover()
 LINEAR ALGORITHM
 def linear()
 
-    maximum sum = 0
-    current sum = 0
+    maximum sum
+    current sum
     
     for loop through range(array)
         current sum + arrayIndex

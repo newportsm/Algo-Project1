@@ -6,3 +6,6 @@ Created by:
 Sarah Newport,
 Lisa Scheibner,
 Kayla Vondy
+
+
+To run program type in command line: python algorithms.py
